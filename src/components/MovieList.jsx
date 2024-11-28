@@ -36,7 +36,10 @@ export const MovieList = () => {
                 {data.length > 0 ? (
                     data.map((movie) => (
                         <li key={movie.id}>
-                            {movie.original_title}
+                            <h5>{movie.title}</h5>
+                            <p>{movie.original_title}</p>
+                            <p>{movie.original_language}</p>
+                            <p>{movie.vote_average}</p>
                         </li>
                     ))
                 ) : (
