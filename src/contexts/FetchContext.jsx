@@ -21,22 +21,19 @@ export const FetchProvider = ({ children }) => {
         fetch(moviesUrl)
             .then(response => response.json())
             .then(results => {
-                // console.log("Risultato API", results);
+
                 if (results.results) {
                     setData(results.results)
-                    // console.log("Dati passati a setData", results.results);
 
                 } else {
                     console.log("No data");
                 }
             })
             .catch(err => {
-                // console.error("Errore nella chiamata API:", err);  // Log degli errori
                 setData([]);  // Imposta un array vuoto in caso di errore
             })
 
 
-        // Creo l'useEffect che mi permette di prelevare i dati dall'url per le serie TV
         fetch(TVShowsUrl)
             .then(response => response.json())
             .then(results => {
