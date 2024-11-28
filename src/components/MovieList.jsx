@@ -1,6 +1,9 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { FetchContext } from "../contexts/FetchContext.jsx"
 import ReactCountryFlag from "react-country-flag";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
 
 const languageFlag = {
     it: "IT",
@@ -20,7 +23,6 @@ export const MovieList = () => {
 
     // Utilizzo del contesto per accedere ai dati e alle funzioni necessarie
     const { data, searchMovie, setSearchMovie, setUserInput } = useContext(FetchContext)
-
 
     // Funzione per gestire la ricerca del film
     function handleSearchClick(e) {
@@ -46,6 +48,7 @@ export const MovieList = () => {
 
             </form>
 
+
             {/* Lista film */}
             <ul>
 
@@ -60,16 +63,18 @@ export const MovieList = () => {
                                     countryCode={languageFlag[movie.original_language] || "US"}
                                 />
                             </p>
-                            <p>Voto: {movie.vote_average}/10</p>
+
+                            {/* Creo un array della lunghezza del voto / 2 poi ci ciclo per stmpare le stelle */}
+                            {Array.from({ length: Math.ceil(movie.vote_average / 2) }).map((_, index) => (
+                                <FontAwesomeIcon key={index} icon={faStar} />
+                            ))}
                         </li>
                     ))
                 ) : (
                     <li>No movies found</li>
                 )}
 
-            </ul>
-
-
+            </ul >
         </>
     );
 };
