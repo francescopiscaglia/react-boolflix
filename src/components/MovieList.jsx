@@ -2,16 +2,17 @@ import { useContext, useState } from "react"
 import { FetchContext } from "../contexts/FetchContext.jsx"
 
 export const MovieList = () => {
-    const { data } = useContext(FetchContext)
-    const [searchMovie, setSearchMovie] = useState("")
+    // logic
+
+    // Utilizzo del contesto per accedere ai dati e alle funzioni necessarie
+    const { data, searchMovie, setSearchMovie } = useContext(FetchContext)
 
     // Funzione per gestire la ricerca del film
     function handleSearchClick(e) {
         e.preventDefault();
-        console.log(searchMovie);
     };
 
-
+    // render
     return (
         <>
             {/* Ricerca film */}
