@@ -17,19 +17,21 @@ export const FetchProvider = ({ children }) => {
 
     // Creo l'useEffect che mi permette di prelevare i dati dall'url per i film
     useEffect(() => {
-        // console.log("useEffect eseguito");
+
+        setData([]) // Resetta lo stato prima di eseguire la nuova richiesta
+
         fetch(moviesUrl)
             .then(response => response.json())
             .then(results => {
 
                 if (results.results) {
-                    setData(results.results)
-
+                    setData(prevData => ([...prevData, ...results.results])) // Aggiorna lo stato con i nuovi dati
                 } else {
                     console.log("No data");
                 }
             })
             .catch(err => {
+                console.error(err);
                 setData([]);  // Imposta un array vuoto in caso di errore
             })
 
@@ -39,7 +41,7 @@ export const FetchProvider = ({ children }) => {
             .then(results => {
                 // console.log("Risultato API", results);
                 if (results.results) {
-                    setData(results.results)
+                    setData(prevData => ([...prevData, ...results.results])) // Aggiorna lo stato con i nuovi dati
                     // console.log("Dati passati a setData", results.results);
 
                 } else {
