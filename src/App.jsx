@@ -11,13 +11,8 @@ function App() {
   return (
     <>
       <FetchProvider>
-
-        <FetchContext.Provider value={{ data, setData }}>
-          <MovieList />
-        </FetchContext.Provider >
+        <MovieList />
       </FetchProvider>
-
-
     </>
   );
 };

@@ -11,21 +11,21 @@ export const FetchProvider = ({ children }) => {
 
     // Creo l'useEffect che mi permette di prelevare i dati dall'url
     useEffect(() => {
-        console.log("useEffect eseguito");
+        // console.log("useEffect eseguito");
         fetch(url)
             .then(response => response.json())
             .then(results => {
-                console.log("Risultato API", results);
+                // console.log("Risultato API", results);
                 if (results.results) {
                     setData(results.results)
-                    console.log("Dati passati a setData", results.results);
+                    // console.log("Dati passati a setData", results.results);
 
                 } else {
                     console.log("No data");
                 }
             })
             .catch(err => {
-                console.error("Errore nella chiamata API:", err);  // Log degli errori
+                // console.error("Errore nella chiamata API:", err);  // Log degli errori
                 setData([]);  // Imposta un array vuoto in caso di errore
             })
     }, [url]);
