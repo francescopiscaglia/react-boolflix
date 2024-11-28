@@ -1,8 +1,10 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { FetchContext } from "../contexts/FetchContext.jsx"
 import ReactCountryFlag from "react-country-flag";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons";
+
 
 
 const languageFlag = {
@@ -66,8 +68,14 @@ export const MovieList = () => {
 
                             {/* Creo un array della lunghezza del voto / 2 poi ci ciclo per stmpare le stelle */}
                             {Array.from({ length: Math.ceil(movie.vote_average / 2) }).map((_, index) => (
-                                <FontAwesomeIcon key={index} icon={faStar} />
+                                <FontAwesomeIcon key={`full-${index}`} icon={faStar} />
                             ))}
+
+                            {/* Creo un array della lunghezza del voto / 2 poi ci ciclo per stmpare le stelle vuote */}
+                            {Array.from({ length: Math.floor((10 - movie.vote_average) / 2) }).map((_, index) => (
+                                <FontAwesomeIcon key={`empty-${index}`} icon={faStarEmpty} />
+                            ))}
+
                         </li>
                     ))
                 ) : (
