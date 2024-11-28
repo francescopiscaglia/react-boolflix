@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { FetchContext } from "../contexts/FetchContext.jsx"
 import ReactCountryFlag from "react-country-flag";
 
@@ -19,12 +19,13 @@ export const MovieList = () => {
     // logic
 
     // Utilizzo del contesto per accedere ai dati e alle funzioni necessarie
-    const { data, searchMovie, setSearchMovie } = useContext(FetchContext)
+    const { data, searchMovie, setSearchMovie, setUserInput } = useContext(FetchContext)
 
 
     // Funzione per gestire la ricerca del film
     function handleSearchClick(e) {
         e.preventDefault();
+        setUserInput(searchMovie)
     };
 
     // render
@@ -51,14 +52,14 @@ export const MovieList = () => {
                 {data.length > 0 ? (
                     data.map((movie) => (
                         <li key={movie.id}>
-                            <h5>{movie.title}</h5>
-                            <p>{movie.original_title}</p>
+                            <h5>{movie.title ? movie.title : movie.name}</h5>
+                            <p>{movie.original_title ? movie.original_title : movie.original_name}</p>
                             <p>
                                 <ReactCountryFlag
                                     countryCode={languageFlag[movie.original_language] || "US"}
                                 />
                             </p>
-                            <p>{movie.vote_average}</p>
+                            <p>Voto: {movie.vote_average}/10</p>
                         </li>
                     ))
                 ) : (
