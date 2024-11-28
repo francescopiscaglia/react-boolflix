@@ -7,7 +7,7 @@ export const FetchProvider = ({ children }) => {
     // Creo lo stato iniziale
     const [data, setData] = useState([])
     // Creo l'url da cui prelevare i dati
-    const url = 'https://api.themoviedb.org/3/search/movie?api_key=9099ad3a06ad840a484b4b495d6d8e4b&query=ritorno al futuro';
+    const url = 'https://api.themoviedb.org/3/search/movie?api_key=9099ad3a06ad840a484b4b495d6d8e4b&query=matrix';
 
     // Creo l'useEffect che mi permette di prelevare i dati dall'url
     useEffect(() => {
