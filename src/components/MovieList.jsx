@@ -52,6 +52,7 @@ export const MovieList = () => {
                 {data.length > 0 ? (
                     data.map((movie) => (
                         <li key={movie.id}>
+                            <img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt="" />
                             <h5>{movie.title ? movie.title : movie.name}</h5>
                             <p>{movie.original_title ? movie.original_title : movie.original_name}</p>
                             <p>
