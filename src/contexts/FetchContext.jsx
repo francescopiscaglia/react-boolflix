@@ -6,7 +6,7 @@ export const FetchProvider = ({ children }) => {
 
     // Creo lo stato iniziale
     const [data, setData] = useState([])
-    const [searchMovie, setSearchMovie] = useState('')
+    const [searchContent, setSearchContent] = useState('')
     const [userInput, setUserInput] = useState('')
 
     // Creo l'url da cui prelevare i dati
@@ -56,7 +56,7 @@ export const FetchProvider = ({ children }) => {
 
     return (
         // Creo il provider che mi permette di passare i dati a tutti i componenti figli
-        <FetchContext.Provider value={{ data, setData, searchMovie, setSearchMovie, userInput, setUserInput }}>
+        <FetchContext.Provider value={{ data, setData, searchContent, setSearchContent, userInput, setUserInput }}>
             {children}
         </FetchContext.Provider>
     );

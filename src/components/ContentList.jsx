@@ -20,16 +20,16 @@ const languageFlag = {
     ru: "RU"
 };
 
-export const MovieList = () => {
+export const ContentList = () => {
     // logic
 
     // Utilizzo del contesto per accedere ai dati e alle funzioni necessarie
-    const { data, searchMovie, setSearchMovie, setUserInput } = useContext(FetchContext)
+    const { data, searchContent, setSearchContent, setUserInput } = useContext(FetchContext)
 
     // Funzione per gestire la ricerca del film
     function handleSearchClick(e) {
         e.preventDefault();
-        setUserInput(searchMovie)
+        setUserInput(searchContent)
     };
 
     // render
@@ -38,12 +38,14 @@ export const MovieList = () => {
             {/* Ricerca film */}
             <form onSubmit={handleSearchClick}>
 
+                {/* Input per la ricerca dei contenuti */}
                 <input
                     type="search"
                     placeholder="Search..."
-                    value={searchMovie}
-                    onChange={e => { setSearchMovie(e.target.value) }}
+                    value={searchContent}
+                    onChange={e => { setSearchContent(e.target.value) }}
                 />
+                {/* Pulsante per avviare la ricerca */}
                 <button
                     type="submit"
                 >Cerca</button>
@@ -57,6 +59,7 @@ export const MovieList = () => {
                 {data.length > 0 ? (
                     data.map((movie) => (
                         <li key={movie.id}>
+
                             <img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt="" />
                             <h5>{movie.title ? movie.title : movie.name}</h5>
                             <p>{movie.original_title ? movie.original_title : movie.original_name}</p>
