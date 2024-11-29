@@ -26,38 +26,10 @@ export const ContentList = () => {
     // Utilizzo del contesto per accedere ai dati e alle funzioni necessarie
     const { data, searchContent, setSearchContent, setUserInput } = useContext(FetchContext)
 
-    // Funzione per gestire la ricerca del film
-    function handleSearchSubmit(e) {
-        e.preventDefault();
-        setUserInput(searchContent);
-        setSearchContent("");
-    };
 
     // render
     return (
         <>
-            <header>
-
-                <img src="/logo.png" alt="" />
-
-                {/* Ricerca film */}
-                <form onSubmit={handleSearchSubmit}>
-
-                    {/* Input per la ricerca dei contenuti */}
-                    <input
-                        type="search"
-                        placeholder="Search..."
-                        value={searchContent}
-                        onChange={e => { setSearchContent(e.target.value) }}
-                    />
-                    {/* Pulsante per avviare la ricerca */}
-                    <button
-                        type="submit"
-                    >Cerca</button>
-
-                </form>
-
-            </header>
 
             <main>
 
