@@ -39,32 +39,43 @@ export const ContentList = () => {
                             data.map((movie) => (
 
                                 <div className="col" key={movie.id}>
-                                    <div className="card text-bg-dark">
+                                    <div
+                                        className="card text-bg-dark"
+                                        style={
+                                            {
+                                                backgroundImage: `url(https://image.tmdb.org/t/p/w342${movie.poster_path})`,
+                                            }
+                                        }
+                                    >
 
-                                        <img
+                                        {/* <img
                                             src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
                                             alt={movie.title}
-                                            className="card-img-top"
-                                        />
+                                            className="img-"
+                                        /> */}
                                         <div className="card-body">
 
                                             <h5 className="card-title">{movie.title ? movie.title : movie.name}</h5>
-                                            <p className="card-text">{movie.original_title ? movie.original_title : movie.original_name}</p>
-                                            <p className="card-text">
+                                            <span className="card-text me-2">{movie.original_title ? movie.original_title : movie.original_name}</span>
+                                            <span className="card-text">
                                                 <ReactCountryFlag
                                                     countryCode={languageFlag[movie.original_language] || "US"}
                                                 />
-                                            </p>
+                                            </span>
 
-                                            {/* Creo un array della lunghezza del voto / 2 poi ci ciclo per stmpare le stelle */}
-                                            {Array.from({ length: Math.ceil(movie.vote_average / 2) }).map((_, index) => (
-                                                <FontAwesomeIcon key={`full-${index}`} icon={faStar} />
-                                            ))}
+                                            <div className="average">
 
-                                            {/* Creo un array della lunghezza del voto / 2 poi ci ciclo per stmpare le stelle vuote */}
-                                            {Array.from({ length: Math.floor((10 - movie.vote_average) / 2) }).map((_, index) => (
-                                                <FontAwesomeIcon key={`empty-${index}`} icon={faStarEmpty} />
-                                            ))}
+                                                {/* Creo un array della lunghezza del voto / 2 poi ci ciclo per stmpare le stelle */}
+                                                {Array.from({ length: Math.ceil(movie.vote_average / 2) }).map((_, index) => (
+                                                    <FontAwesomeIcon key={`full-${index}`} icon={faStar} />
+                                                ))}
+
+                                                {/* Creo un array della lunghezza del voto / 2 poi ci ciclo per stmpare le stelle vuote */}
+                                                {Array.from({ length: Math.floor((10 - movie.vote_average) / 2) }).map((_, index) => (
+                                                    <FontAwesomeIcon key={`empty-${index}`} icon={faStarEmpty} />
+                                                ))}
+                                            </div>
+
                                         </div>
 
                                     </div>
