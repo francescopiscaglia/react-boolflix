@@ -16,16 +16,12 @@ function App() {
       <FetchProvider>
         <BrowserRouter>
           <Routes>
+
             <Route element={<DefaultLayout />}>
               <Route path='/' element={<HomePage />} />
               <Route path='/library' element={<ContentList />} />
               <Route path='/about' element={<AboutPage />} />
             </Route>
-
-
-            {/* <AppHeader />
-            <ContentList />
-            <AppFooter /> */}
 
           </Routes>
         </BrowserRouter>
