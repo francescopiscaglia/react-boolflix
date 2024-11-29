@@ -11,10 +11,13 @@ export const FetchProvider = ({ children }) => {
     // Creo lo stato iniziale per la ricerca che fa l'utente
     const [userInput, setUserInput] = useState('')
 
-    // Creo l'url da cui prelevare i dati
-    const moviesUrl = `https://api.themoviedb.org/3/search/movie?api_key=9099ad3a06ad840a484b4b495d6d8e4b&query=${userInput}`;
+    // importo la chiave API
+    const apiKey = import.meta.env.VITE_API_KEY
 
-    const TVShowsUrl = `https://api.themoviedb.org/3/search/tv?api_key=9099ad3a06ad840a484b4b495d6d8e4b&language=it_IT&query=${userInput}`;
+    // Creo l'url da cui prelevare i dati
+    const moviesUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${userInput}`;
+
+    const TVShowsUrl = `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=it_IT&query=${userInput}`;
 
 
     // Creo l'useEffect che mi permette di prelevare i dati dall'url per i film
