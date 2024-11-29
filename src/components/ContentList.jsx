@@ -27,16 +27,17 @@ export const ContentList = () => {
     const { data, searchContent, setSearchContent, setUserInput } = useContext(FetchContext)
 
     // Funzione per gestire la ricerca del film
-    function handleSearchClick(e) {
+    function handleSearchSubmit(e) {
         e.preventDefault();
-        setUserInput(searchContent)
+        setUserInput(searchContent);
+        setSearchContent("");
     };
 
     // render
     return (
         <>
             {/* Ricerca film */}
-            <form onSubmit={handleSearchClick}>
+            <form onSubmit={handleSearchSubmit}>
 
                 {/* Input per la ricerca dei contenuti */}
                 <input

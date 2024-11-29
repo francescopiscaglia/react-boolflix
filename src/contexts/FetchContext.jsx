@@ -4,9 +4,11 @@ export const FetchContext = createContext()
 
 export const FetchProvider = ({ children }) => {
 
-    // Creo lo stato iniziale
-    const [data, setData] = useState([])
-    const [searchContent, setSearchContent] = useState('')
+    // Creo lo stato iniziale per i dati
+    const [data, setData] = useState([]);
+    // Creo lo stato iniziale per il valore dell'input di ricerca
+    const [searchContent, setSearchContent] = useState('');
+    // Creo lo stato iniziale per la ricerca che fa l'utente
     const [userInput, setUserInput] = useState('')
 
     // Creo l'url da cui prelevare i dati
