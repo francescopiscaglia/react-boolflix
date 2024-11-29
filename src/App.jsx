@@ -4,18 +4,32 @@ import "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FetchProvider } from './contexts/FetchContext.jsx';
 import { ContentList } from './components/ContentList.jsx';
-import AppHeader from './components/AppHeader.jsx';
-import AppFooter from './components/AddFooter.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import DefaultLayout from './components/Layout/DefaultLayout.jsx';
+import HomePage from './components/pages/HomePage.jsx';
 
 function App() {
 
   return (
     <>
       <FetchProvider>
-        <AppHeader />
-        <ContentList />
-        <AppFooter />
+        <BrowserRouter>
+          <Routes>
+            <Route element={<DefaultLayout />}>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/library' element={<ContentList />} />
+            </Route>
+
+
+            {/* <AppHeader />
+            <ContentList />
+            <AppFooter /> */}
+
+          </Routes>
+        </BrowserRouter>
       </FetchProvider>
+
+
     </>
   );
 };

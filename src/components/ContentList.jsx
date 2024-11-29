@@ -6,7 +6,6 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons";
 
 
-
 const languageFlag = {
     it: "IT",
     en: "US",
@@ -30,7 +29,7 @@ export const ContentList = () => {
     // render
     return (
         <>
-            <main>
+            <>
                 <div className="container">
                     <div className="row row-cols row-cols-md-2 row-cols-lg-3 g-3">
 
@@ -47,12 +46,6 @@ export const ContentList = () => {
                                             }
                                         }
                                     >
-
-                                        {/* <img
-                                            src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-                                            alt={movie.title}
-                                            className="img-"
-                                        /> */}
                                         <div className="card-body">
 
                                             <h5 className="card-title">{movie.title ? movie.title : movie.name}</h5>
@@ -76,6 +69,8 @@ export const ContentList = () => {
                                                 ))}
                                             </div>
 
+                                            <p className="card-text overview">{movie.overview}</p>
+
                                         </div>
 
                                     </div>
@@ -86,7 +81,7 @@ export const ContentList = () => {
                         )}
                     </div>
                 </div>
-            </main>
+            </>
         </>
     );
 };

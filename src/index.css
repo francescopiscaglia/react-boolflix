@@ -38,6 +38,14 @@ main {
         left: 0;
         opacity: 0;
         z-index: 2;
+
+        .overview {
+            max-height: 300px;
+            overflow-y: auto;
+            text-align: justify;
+            margin-top: 5px;
+            font-size: .85rem;
+        }
     }
 
     .card::before {
