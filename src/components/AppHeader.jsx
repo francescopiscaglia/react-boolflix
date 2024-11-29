@@ -20,21 +20,15 @@ export default function AppHeader() {
 
             <img src="/logo.png" alt="" />
 
-            {/* Ricerca film */}
-            <form onSubmit={handleSearchSubmit}>
-
-                {/* Input per la ricerca dei contenuti */}
+            <form className="d-flex" role="search" onSubmit={handleSearchSubmit}>
                 <input
+                    className="form-control me-2"
                     type="search"
-                    placeholder="Search..."
-                    value={searchContent}
+                    placeholder="🔍 Search..."
+                    aria-label="Search"
                     onChange={e => { setSearchContent(e.target.value) }}
                 />
-                {/* Pulsante per avviare la ricerca */}
-                <button
-                    type="submit"
-                >Cerca</button>
-
+                <button className="btn btn-outline-danger" type="submit">Search</button>
             </form>
 
         </header>
