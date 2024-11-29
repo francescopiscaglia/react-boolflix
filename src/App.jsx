@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FetchProvider } from './contexts/FetchContext.jsx';
 import { ContentList } from './components/ContentList.jsx';
 import AppHeader from './components/AppHeader.jsx';
+import AppFooter from './components/AddFooter.jsx';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <FetchProvider>
         <AppHeader />
         <ContentList />
+        <AppFooter />
       </FetchProvider>
     </>
   );

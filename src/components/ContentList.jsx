@@ -32,14 +32,14 @@ export const ContentList = () => {
         <>
             <main>
                 <div className="container">
-                    <div className="row row-cols row-cols-md-2 row-cols-lg-3">
+                    <div className="row row-cols row-cols-md-2 row-cols-lg-3 g-3">
 
                         {/* Lista film */}
                         {data.length > 0 ? (
                             data.map((movie) => (
 
                                 <div className="col" key={movie.id}>
-                                    <div className="card">
+                                    <div className="card text-bg-dark">
 
                                         <img
                                             src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
@@ -76,10 +76,6 @@ export const ContentList = () => {
                     </div>
                 </div>
             </main>
-
-            <footer>
-                <p>© 2024 - All Rights Reserved</p>
-            </footer>
         </>
     );
 };
