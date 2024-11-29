@@ -7,6 +7,7 @@ import { ContentList } from './components/ContentList.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DefaultLayout from './components/Layout/DefaultLayout.jsx';
 import HomePage from './components/pages/HomePage.jsx';
+import AboutPage from './components/pages/AboutPage.jsx';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Route element={<DefaultLayout />}>
               <Route path='/' element={<HomePage />} />
               <Route path='/library' element={<ContentList />} />
+              <Route path='/about' element={<AboutPage />} />
             </Route>
 
 
