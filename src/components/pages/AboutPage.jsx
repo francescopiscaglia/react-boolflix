@@ -14,6 +14,7 @@ export default function AboutPage() {
                 pageDescription={pageDescription}
             >
                 <p className="card-text">Use the search bar to find a movie or a TV series or click on the logo to go back to Home</p>
+                <p className="card-text">This is a work in progress webApp, stay tuned.. 👀</p>
             </Jumbotron>
         </>
     );
