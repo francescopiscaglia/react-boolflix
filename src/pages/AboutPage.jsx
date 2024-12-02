@@ -1,4 +1,4 @@
-import Jumbotron from "../Jumbotron.jsx"
+import Jumbotron from "../components/Jumbotron.jsx"
 
 export default function AboutPage() {
 

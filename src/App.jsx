@@ -5,9 +5,9 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FetchProvider } from './contexts/FetchContext.jsx';
 import { ContentList } from './components/ContentList.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import DefaultLayout from './components/Layout/DefaultLayout.jsx';
-import HomePage from './components/pages/HomePage.jsx';
-import AboutPage from './components/pages/AboutPage.jsx';
+import DefaultLayout from './Layout/DefaultLayout.jsx';
+import HomePage from './pages/HomePage.jsx';
+import AboutPage from './pages/AboutPage.jsx';
 
 function App() {
 

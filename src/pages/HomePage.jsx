@@ -1,6 +1,5 @@
 import { useContext } from "react";
-import Jumbotron from "../Jumbotron";
-import { FetchContext } from "../../contexts/FetchContext";
+import { FetchContext } from "../contexts/FetchContext.jsx";
 
 export default function HomePage() {
     const { popular } = useContext(FetchContext)
