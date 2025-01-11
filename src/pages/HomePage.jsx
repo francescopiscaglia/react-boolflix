@@ -11,14 +11,14 @@ export default function HomePage() {
     // render
     return (
         <>
-            <div className="">
+            <div style={{ width: "90%", margin: "auto" }}>
                 <div className="row row-cols row-cols-md-2 row-cols-lg-3 g-3">
 
                     {/* Lista film */}
                     {popular.length > 0 ? (
                         popular.map((movie) => (
 
-                            <div className="col" key={movie.id}>
+                            <div className="col" key={movie.id} style={{ width: "342px" }}>
                                 <div
                                     className="card text-bg-dark"
                                     style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w342${movie.poster_path})` }}
